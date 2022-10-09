@@ -8,6 +8,12 @@ use App\Http\Livewire\Auth\Passwords\Email;
 use App\Http\Livewire\Auth\Passwords\Reset;
 use App\Http\Livewire\Auth\Register;
 use App\Http\Livewire\Auth\Verify;
+use App\Http\Livewire\Pages\{
+    Home,
+    Clientes,
+    SaberMais,
+    Contatos
+};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -54,3 +60,8 @@ Route::middleware('auth')->group(function () {
     Route::post('logout', LogoutController::class)
         ->name('logout');
 });
+
+Route::get('/', Home::class)->name('home');
+Route::get('clientes', Clientes::class)->name('clientes');
+Route::get('saber-mais', SaberMais::class)->name('saber-mais');
+Route::get('contatos', Contatos::class)->name('contatos');

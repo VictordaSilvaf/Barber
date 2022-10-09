@@ -5,6 +5,19 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+                dancing: ['Dancing'],
+                dancingScript: ['Dancing Script', 'cursive']
+            },
+            colors: {
+                'lightning': {
+                    'first': '#f6f6f6',
+                    'second': '#e8e8e8',
+                },
+                'darkness': '#333333',
+                'blood': {
+                    'first': '#b90504',
+                    'second': '#990100',
+                }
             },
         },
     },

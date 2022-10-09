@@ -1,18 +1,24 @@
-<div class="bg-zinc-900 dark:bg-zinc-900 w-full p-2 flex items-center">
-    <div class="text-white ml-4 uppercase">
-        {{ config('app.name') }}
+<div class="bg-blood-second w-full p-2 grid grid-cols-12 text-lightning-first font-dancingScript text-lg">
+    <div class="ml-4 uppercase col-span-1 flex items-center">
+        <p class="text-white">Barber</p>
     </div>
+
+    <div class="w-full flex justify-center col-span-10 flex items-center gap-8">
+        <livewire:components.menu-btn href="{{ route('home') }}" :active="request()->routeIs('home')">Inicio</livewire:components.menu-btn>
+        <livewire:components.menu-btn href="{{ route('clientes') }}" :active="request()->routeIs('clientes')">Clientes</livewire:components.menu-btn>
+        <livewire:components.menu-btn href="{{ route('saber-mais') }}" :active="request()->routeIs('saber-mais')">Saber mais</livewire:components.menu-btn>
+        <livewire:components.menu-btn href="{{ route('contatos') }}" :active="request()->routeIs('contatos')">Contatos</livewire:components.menu-btn>
+    </div>
+
     <div class="my-2 mr-4 w-full flex justify-end">
-
         @if (Route::has('login'))
-            <div class="space-x-4 text-white flex flex-row">
+            <div class="space-x-4 flex flex-row justify-center items-center ">
                 @livewire('components.dark-theme-btn')
-
                 @auth
                     <a
                         href="{{ route('logout') }}"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                        class="font-medium focus:outline-none focus:underline transition ease-in-out duration-150 p-2 text-center"
+                        class="btn-menu anime-up"
                     >
                         Sair
                     </a>
@@ -22,11 +28,11 @@
                     </form>
                 @else
                     <a href="{{ route('login') }}"
-                       class="font-medium hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150 p-2 text-center">Logar</a>
+                       class="btn-menu anime-up">Logar</a>
 
                     @if (Route::has('register'))
                         <a href="{{ route('register') }}"
-                           class="font-medium hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150 p-2 text-center">Registrar</a>
+                           class="btn-menu anime-up">Registrar</a>
                     @endif
                 @endauth
             </div>
