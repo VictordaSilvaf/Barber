@@ -1,13 +1,16 @@
-<div class="bg-blood-second w-full p-2 grid grid-cols-12 text-lightning-first font-dancingScript text-lg">
-    <div class="ml-4 uppercase col-span-1 flex items-center">
-        <p class="text-white">Barber</p>
+<div class="bg-zinc-900 dark:bg-zinc-900 w-full p-2 grid grid-cols-12 text-white">
+    <div class="ml-4 uppercase col-span-1 flex justify-center items-center">
+        {{ config('app.name') }}
     </div>
 
-    <div class="w-full flex justify-center col-span-10 flex items-center gap-8">
-        <livewire:components.menu-btn href="{{ route('home') }}" :active="request()->routeIs('home')">Inicio</livewire:components.menu-btn>
-        <livewire:components.menu-btn href="{{ route('clientes') }}" :active="request()->routeIs('clientes')">Clientes</livewire:components.menu-btn>
-        <livewire:components.menu-btn href="{{ route('saber-mais') }}" :active="request()->routeIs('saber-mais')">Saber mais</livewire:components.menu-btn>
-        <livewire:components.menu-btn href="{{ route('contatos') }}" :active="request()->routeIs('contatos')">Contatos</livewire:components.menu-btn>
+    <div class="w-full flex justify-center col-span-10 flex justify-center items-center">
+        <div class="flex gap-8">
+            <x-menu.button route="#">Inicio</x-menu.button>
+            <x-menu.button route="#">Catalogo</x-menu.button>
+            <x-menu.button route="#">Sobre Nós</x-menu.button>
+            <x-menu.button route="#">Dúvidas</x-menu.button>
+            <x-menu.button route="#">Trabalhe Conosco</x-menu.button>
+        </div>
     </div>
 
     <div class="my-2 mr-4 w-full flex justify-end">
